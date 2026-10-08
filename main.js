@@ -9,9 +9,26 @@ let avoidance = new Chart(document.getElementById("avoidance"), {
 });
 
 let lossPrevention = new Chart(document.getElementById("lossPrevention"), {
+  type: "bar",
+  data: {
+    labels: ["Driver Training", "No Alcohol or Drugs", "Safety Rules Enforcement"],
+    datasets: [
+      {
+        label: "Before",
+        data: [40, 100, 30],
+      },
+      {
+        label: "After",
+        data: [20, 50, 10],
+      },
+    ]
+  },
+});
+
+let lossReduction = new Chart(document.getElementById("lossReduction"), {
   type: "doughnut",
   data: {
-    labels: ["Truck Accident", "Driver Training", "No Alcohol or Drugs", "Safety Rules Enforcement"],
+    labels: ["Damage from Fire", "Automatic Sprinkler System", "First-Aid Boxes", "Fire Service Response"],
     datasets: [{
       data: [1/100, 4/10, 3/10, 3/10 - 1/100],
     }]
