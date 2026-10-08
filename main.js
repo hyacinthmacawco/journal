@@ -35,7 +35,7 @@ let lossReduction = new Chart(document.getElementById("lossReduction"), {
   },
 });
 
-let duplication = new Chart(document.getElementById("avoidance"), {
+let duplication = new Chart(document.getElementById("duplication"), {
   type: "scatter",
   data: {
     datasets: [
@@ -51,7 +51,7 @@ let duplication = new Chart(document.getElementById("avoidance"), {
   },
 });
 
-let separation = new Chart(document.getElementById("lossPrevention"), {
+let separation = new Chart(document.getElementById("separation"), {
   type: "bar",
   data: {
     labels: ["January", "February", "March"],
@@ -78,19 +78,19 @@ let separation = new Chart(document.getElementById("lossPrevention"), {
   },
 });
 
-let diversification = new Chart(document.getElementById("lossReduction"), {
+let diversification = new Chart(document.getElementById("diversification"), {
   type: "bubble",
   data: {
     datasets: [
       {
-        label: "Stocks"
+        label: "Stocks",
         data: [
           {x: 20, y: 10, r: 5, name: "AAPL"},
           {x: 22, y: 12, r: 4, name: "MSFT"},
         ],
       },
       {
-        label: "Bonds"
+        label: "Bonds",
         data: [
           {x: 50, y: 40, r: 2, name: "WMT"},
           {x: 60, y: 22, r: 3, name: "MRNA"},
@@ -98,4 +98,16 @@ let diversification = new Chart(document.getElementById("lossReduction"), {
       },
     ]
   },
+  options: {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const point = context.raw;
+            return `${point.name} ${point.x} ${point.y} ${point.r}`
+          }
+        }
+      }
+    }
+  }
 });
