@@ -1,6 +1,4 @@
-const ctx = document.getElementById('avoidance');
-
-new Chart(ctx, {
+let avoidance = new Chart(document.getElementById("avoidance"), {
   type: "radar",
   data: {
     labels: ["Exposure 1", "Exposure 2", "Exposure 3"],
