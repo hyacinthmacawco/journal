@@ -34,3 +34,80 @@ let lossReduction = new Chart(document.getElementById("lossReduction"), {
     }]
   },
 });
+
+let duplication = new Chart(document.getElementById("avoidance"), {
+  type: "scatter",
+  data: {
+    datasets: [
+      {
+        label: "Car Tire",
+        data: [
+          {x: 10, y: 20},
+          {x: 15, y: 20},
+          {x: 50, y: 40},
+        ],
+      }
+    ]
+  },
+});
+
+let separation = new Chart(document.getElementById("lossPrevention"), {
+  type: "bar",
+  data: {
+    labels: ["January", "February", "March"],
+    datasets: [
+      {
+        label: "Part 1",
+        data: [40, 100, 30],
+      },
+      {
+        label: "Part 2",
+        data: [20, 50, 10],
+      },
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true
+      }
+    },
+  },
+});
+
+let diversification = new Chart(document.getElementById("lossReduction"), {
+  type: "bubble",
+  data: {
+    datasets: [
+      {
+        label: "Stocks"
+        data: [
+          {x: 20, y: 10, r: 5, name: "AAPL"},
+          {x: 22, y: 12, r: 4, name: "MSFT"},
+        ],
+      },
+      {
+        label: "Bonds"
+        data: [
+          {x: 50, y: 40, r: 2, name: "WMT"},
+          {x: 60, y: 22, r: 3, name: "MRNA"},
+        ],
+      },
+    ]
+  },
+  options: {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const p = context.raw;
+            return `${p.name} ${p.x} ${p.y}`;
+          }
+        }
+      }
+    }
+  }
+});
