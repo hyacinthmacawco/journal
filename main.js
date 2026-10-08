@@ -98,16 +98,4 @@ let diversification = new Chart(document.getElementById("lossReduction"), {
       },
     ]
   },
-  options: {
-    plugins: {
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            const p = context.raw;
-            return `${p.name} ${p.x} ${p.y}`;
-          }
-        }
-      }
-    }
-  }
 });
