@@ -1,9 +1,9 @@
-const ctx = document.getElementById('myChart');
+const avoidance = document.getElementById('avoidance');
 
-new Chart(ctx, {
-  type: 'radar',
+new Chart(avoidance, {
+  type: "radar",
   data: {
-    labels: ["1", "2", "3"],
+    labels: ["Exposure 1", "Exposure 2", "Exposure 3"],
     datasets: [{
       data: [1, 10, 5],
     }]
